@@ -1,8 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { CourseCard } from "./components/CourseCard";
-import Slider from './components/MovingCardList';
-import Navbar from './components/Header';
+import Home from './pages/Home';
 
 const responsive = {
   superLargeDesktop: {
@@ -28,8 +25,7 @@ const responsive = {
 function App() {
   return (
     <>
-      <Navbar />
-      <Slider />
+      <Home></Home>
     </>
   );
 }

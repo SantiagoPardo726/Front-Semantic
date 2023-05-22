@@ -1,6 +1,7 @@
+/* @import '../services/colors.js'; */
 .navbar {
-    background-color: #689689;
-    color: #504136;
+    background-color: #006989;
+    color: #eaebed;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -29,7 +30,7 @@
   }
   
   .navbar-link {
-    color: #504136;
+    color: #eaebed;
     font-weight: bold;
     text-decoration: none;
     padding: 5px;
@@ -38,13 +39,13 @@
   .navbar-divider {
     width: 2px;
     height: 25px;
-    background-color: #504136;
+    background-color: #eaebed;
     font-weight: bold;
     margin: 0 10px;
   }
   .navbar-link:hover {
     text-decoration: underline;
-    background-color: #83E6D4;
+    background-color: #01a7c2;
     border-radius: 4px;
   }
   

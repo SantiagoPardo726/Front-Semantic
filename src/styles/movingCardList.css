@@ -3,9 +3,9 @@
     margin: 0;
     box-sizing: border-box;
   }
-  /* body{
-    background: ;
-  } */
+  body{
+    background: #eaebed;
+  }
   
   .slider {
     margin:0 20px;
@@ -14,7 +14,7 @@
   }
   
   .slider img {
-    width: 100%;
+    width: 75%;
     border-radius:15px;
     height: auto;
   }
@@ -25,8 +25,8 @@
   
   .custom-dot-list-style button{
   border: none;
-  background: #504136;
+  background: #007090;
   }
   .react-multi-carousel-dot.react-multi-carousel-dot--active button{
-  background: #a49e8D !important;
+  background: #A3BAC3 !important;
   }

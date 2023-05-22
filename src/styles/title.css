@@ -1,0 +1,31 @@
+/* Estilos para el contenedor de la sección */
+.seccion {
+    width: 100%;
+    height: 110px;
+    background-color: #eaebed;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para el título */
+  .titulo {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para el texto grande */
+  .texto-grande {
+    font-size: 36px;
+    color: #007090;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Estilos para el texto pequeño */
+  .texto-pequeno {
+    font-size: 18px;
+    color: #006989;
+    text-align: left;
+  }
+  
+  

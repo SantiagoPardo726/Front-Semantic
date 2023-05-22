@@ -3,20 +3,6 @@ import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@
 import axios from 'axios';
 
 export function CourseCard() {
-  // const [imageUrl, setImageUrl] = useState('');
-
-  // useEffect(() => {
-  //   const obtenerImagen = async () => {
-  //     try {
-  //       const url = await getImageByKeyword('perro');
-  //       setImageUrl(url);
-  //     } catch (error) {
-  //       // Manejo de errores
-  //     }
-  //   };
-
-  //   obtenerImagen();
-  // }, []);
   const imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS82ET2bq9oTNwPOL8gqyoLoLfeqJJJWJmKQ&usqp=CAU";
 
   return (

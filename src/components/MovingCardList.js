@@ -7,7 +7,7 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 4,
-    slidesToSlide: 2 // optional, default to 1.
+    slidesToSlide: 1 // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 768 },
@@ -96,7 +96,7 @@ const sliderImageUrl = [
       },
   ];
 
-const Slider = () => {
+const MovingCardList = () => {
   return (
     <div className="parent">
       <Carousel
@@ -144,4 +144,4 @@ const Slider = () => {
     </div>
   );
 };
-export default Slider;
+export default MovingCardList;
