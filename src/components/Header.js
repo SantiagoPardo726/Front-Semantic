@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <img src="https://png.pngtree.com/element_our/png/20180910/eagle-business-logo-design-creative-logo-design-concept-with-artistic-png_89910.jpg" alt="Logo" className="logo-image" />
+                <img src="https://w7.pngwing.com/pngs/475/488/png-transparent-logo-mobile-application-testing-mobile-cloud-computing-mobile-phones-software-testing-portal-logo-text-logo-logo-vector.png" alt="Logo" className="logo-image" />
             </div>
             <ul className="navbar-menu">
                 <li className="navbar-item material-icons">
