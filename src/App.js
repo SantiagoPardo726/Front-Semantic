@@ -1,52 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
 import { CourseCard } from "./components/CourseCard";
-import { Carousel } from "./components/MovingCardList";
+import Slider from './components/MovingCardList';
+import Navbar from './components/Header';
 
-const _items = [
-  {
-    player: {
-      title: 'Efren Reyes',
-      desc: 'Known as "The Magician", Efren Reyes is well regarded by many professionals as the greatest all around player of all time.',
-      image: 'https://i.postimg.cc/RhYnBf5m/er-slider.jpg',
-    },
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
   },
-  {
-    player: {
-      title: "Ronnie O'Sullivan",
-      desc: "Ronald Antonio O'Sullivan is a six-time world champion and is the most successful player in the history of snooker.",
-      image: 'https://i.postimg.cc/qBGQNc37/ro-slider.jpg',
-    },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
   },
-  {
-    player: {
-      title: 'Shane Van Boening',
-      desc: 'The "South Dakota Kid" is hearing-impaired and uses a hearing aid, but it has not limited his ability.',
-      image: 'https://i.postimg.cc/cHdMJQKG/svb-slider.jpg',
-    },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
   },
-  {
-    player: {
-      title: 'Mike Sigel',
-      desc: 'Mike Sigel or "Captain Hook" as many like to call him is an American professional pool player with over 108 tournament wins.',
-      image: 'https://i.postimg.cc/C12h7nZn/ms-1.jpg',
-    },
-  },
-  {
-    player: {
-      title: 'Willie Mosconi',
-      desc: 'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
-      image: 'https://i.postimg.cc/NfzMDVHP/willie-mosconi-slider.jpg',
-    },
-  },
-];
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+
 
 function App() {
   return (
     <>
-      <Carousel _items={_items} />
+      <Navbar />
+      <Slider />
     </>
-
   );
 }
 

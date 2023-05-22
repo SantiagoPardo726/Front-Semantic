@@ -1,121 +1,147 @@
-import React from 'react';
-const sleep = (ms = 0) => {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import "../styles/movingCardList.css";
+import { CourseCard } from "./CourseCard";
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 3,
+    slidesToSlide: 3 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 767, min: 464 },
+    items: 2,
+    slidesToSlide: 1 // optional, default to 1.
+  }
 };
-const slideWidth = 30;
-const createItem = (position, idx, _items) => {
-    const item = {
-        styles: {
-            transform: `translateX(${position * slideWidth}rem)`,
-        },
-        player: _items[idx].player,
-    };
-
-    switch (position) {
-        case length - 1:
-        case length + 1:
-            item.styles = {...item.styles, filter: 'grayscale(1)'};
-            break;
-        case length:
-            break;
-        default:
-            item.styles = {...item.styles, opacity: 0};
-            break;
+const sliderImageUrl = [
+    //First image url
+    {
+      url:
+        "https://i2.wp.com/www.geeksaresexy.net/wp-content/uploads/2020/04/movie1.jpg?resize=600%2C892&ssl=1"
+    },
+    {
+      url:
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-kids-movies-2020-call-of-the-wild-1579042974.jpg?crop=0.9760858955588091xw:1xh;center,top&resize=480:*"
+    },
+    //Second image url
+    {
+      url:
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-for-kids-2020-sonic-the-hedgehog-1571173983.jpg?crop=0.9871668311944719xw:1xh;center,top&resize=480:*"
+    },
+    //Third image url
+    {
+      url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS82ET2bq9oTNwPOL8gqyoLoLfeqJJJWJmKQ&usqp=CAU"
+    },
+  
+    //Fourth image url
+  
+    {
+      url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdvuww0JDC7nFRxiFL6yFiAxRJgM-1tvJTxA&usqp=CAU"
     }
+    ,
+    //Second image url
+    {
+      url:
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-for-kids-2020-sonic-the-hedgehog-1571173983.jpg?crop=0.9871668311944719xw:1xh;center,top&resize=480:*"
+    },
+    //Third image url
+    {
+      url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS82ET2bq9oTNwPOL8gqyoLoLfeqJJJWJmKQ&usqp=CAU"
+    },
+    {
+        url:
+          "https://i2.wp.com/www.geeksaresexy.net/wp-content/uploads/2020/04/movie1.jpg?resize=600%2C892&ssl=1"
+      },
+      {
+        url:
+          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-kids-movies-2020-call-of-the-wild-1579042974.jpg?crop=0.9760858955588091xw:1xh;center,top&resize=480:*"
+      },
+      //Second image url
+      {
+        url:
+          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-for-kids-2020-sonic-the-hedgehog-1571173983.jpg?crop=0.9871668311944719xw:1xh;center,top&resize=480:*"
+      },
+      //Third image url
+      {
+        url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS82ET2bq9oTNwPOL8gqyoLoLfeqJJJWJmKQ&usqp=CAU"
+      },
+    
+      //Fourth image url
+    
+      {
+        url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdvuww0JDC7nFRxiFL6yFiAxRJgM-1tvJTxA&usqp=CAU"
+      }
+      ,
+      //Second image url
+      {
+        url:
+          "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-for-kids-2020-sonic-the-hedgehog-1571173983.jpg?crop=0.9871668311944719xw:1xh;center,top&resize=480:*"
+      },
+      //Third image url
+      {
+        url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS82ET2bq9oTNwPOL8gqyoLoLfeqJJJWJmKQ&usqp=CAU"
+      },
+  ];
 
-    return item;
-};
-
-const CarouselSlideItem = ({pos, idx, activeIdx,_items}) => {
-    const item = createItem(pos, idx, activeIdx,_items);
-
-    return (
-        <li className="carousel__slide-item" style={item.styles}>
-            <div className="carousel__slide-item-img-link">
-                <img src={item.player.image} alt={item.player.title} />
+const Slider = () => {
+  return (
+    <div className="parent">
+      <Carousel
+        responsive={responsive}
+        autoPlay={true}
+        swipeable={true}
+        draggable={true}
+        showDots={true}
+        infinite={true}
+        partialVisible={false}
+        autoPlaySpeed = {2000}
+      >
+        {/* {sliderImageUrl.map((imageUrl, index) => {
+          return (
+            <div className="slider" key={index}>
+              <img src={imageUrl.url} alt="movie" />
             </div>
-            <div className="carousel-slide-item__body">
-                <h4>{item.player.title}</h4>
-                <p>{item.player.desc}</p>
-            </div>
-        </li>
-    );
-};
-
-// const keys = Array.from(Array(_items.length).keys());
-
-export function Carousel( { _items } ){
-    const length = _items.length;
-    const keys = Array.from(Array(_items.length).keys());
-    const [items, setItems] = React.useState(keys);
-    const [isTicking, setIsTicking] = React.useState(false);
-    const [activeIdx, setActiveIdx] = React.useState(0);
-    const bigLength = items.length;
-
-    const prevClick = (jump = 1) => {
-        if (!isTicking) {
-            setIsTicking(true);
-            setItems((prev) => {
-                return prev.map((_, i) => prev[(i + jump) % bigLength]);
-            });
-        }
-    };
-
-    const nextClick = (jump = 1) => {
-        if (!isTicking) {
-            setIsTicking(true);
-            setItems((prev) => {
-                return prev.map(
-                    (_, i) => prev[(i - jump + bigLength) % bigLength],
-                );
-            });
-        }
-    };
-
-    const handleDotClick = (idx) => {
-        if (idx < activeIdx) prevClick(activeIdx - idx);
-        if (idx > activeIdx) nextClick(idx - activeIdx);
-    };
-
-    React.useEffect(() => {
-        if (isTicking) sleep(300).then(() => setIsTicking(false));
-    }, [isTicking]);
-
-    React.useEffect(() => {
-        setActiveIdx((length - (items[0] % length)) % length) // prettier-ignore
-    }, [items]);
-
-    return (
-        <div className="carousel__wrap">
-            <div className="carousel__inner">
-                <button className="carousel__btn carousel__btn--prev" onClick={() => prevClick()}>
-                    <i className="carousel__btn-arrow carousel__btn-arrow--left" />
-                </button>
-                <div className="carousel__container">
-                    <ul className="carousel__slide-list">
-                        {items.map((pos, i) => (
-                            <CarouselSlideItem
-                                key={i}
-                                idx={i}
-                                pos={pos}
-                                activeIdx={activeIdx}
-                            />
-                        ))}
-                    </ul>
-                </div>
-                <button className="carousel__btn carousel__btn--next" onClick={() => nextClick()}>
-                    <i className="carousel__btn-arrow carousel__btn-arrow--right" />
-                </button>
-                <div className="carousel__dots">
-                    {items.slice(0, length).map((pos, i) => (
-                        <button
-                            key={i}
-                            onClick={() => handleDotClick(i)}
-                            className={i === activeIdx ? 'dot active' : 'dot'}
-                        />
-                    ))}
-                </div>
-            </div>
+          );
+        })} */}
+        <div className="slider" key={1}>
+              <CourseCard />
         </div>
-    );
+        <div className="slider" key={2}>
+              <CourseCard />
+        </div>
+        <div className="slider" key={3}>
+              <CourseCard />
+        </div>
+        <div className="slider" key={4}>
+              <CourseCard />
+        </div>
+        <div className="slider" key={5}>
+              <CourseCard />
+        </div>
+        <div className="slider" key={6}>
+              <CourseCard />
+        </div>
+        <div className="slider" key={7}>
+              <CourseCard />
+        </div>
+        <div className="slider" key={8}>
+              <CourseCard />
+        </div>
+      </Carousel>
+    </div>
+  );
 };
+export default Slider;
