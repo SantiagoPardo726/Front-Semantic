@@ -1,5 +1,9 @@
 import './App.css';
 import Home from './pages/Home';
+import Form from './components/form';
+import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
+import Form2 from './components/form';
+import PrincipalFilter from './components/PrincipalFilter';
 
 const responsive = {
   superLargeDesktop: {
@@ -25,7 +29,13 @@ const responsive = {
 function App() {
   return (
     <>
-      <Home></Home>
+     <Router>
+      <Routes>
+      <Route path="/ddd" element={<PrincipalFilter />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/create-course" element={<Form2 />} />
+      </Routes>
+    </Router>
     </>
   );
 }
