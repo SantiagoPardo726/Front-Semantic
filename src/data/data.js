@@ -3,7 +3,7 @@ const data = [
 		id: 1,
 		image:
 			'https://samuelkraft.com/_next/image?url=%2Fblog%2Fvanilla-extract-with-next-themes%2Fimage.png&w=1080&q=75',
-		title: 'Using Vanilla Extract with next-themes',
+		title: 'Curso3',
 		category: 'Javascript',
 		description: 'How to apply vanilla extract themes to Next.js apps',
 		date: 'Published on Dec 17, 2021',
@@ -13,7 +13,7 @@ const data = [
 		id: 2,
 		image:
 			'https://samuelkraft.com/_next/image?url=%2Fblog%2Fradix-ui-styling-with-css%2Fimage.png&w=1080&q=75',
-		title: 'Styling Radix UI with CSS',
+		title: 'Curso2',
 		category: 'CSS',
 		description:
 			'Quick tip for styling Radix Primitives with plain CSS, CSS Modules, Vanilla Extract and more',
@@ -24,7 +24,7 @@ const data = [
 		id: 3,
 		image:
 			'https://samuelkraft.com/_next/image?url=%2Fblog%2Ffractional-svg-stars-css%2Fimage.png&w=1080&q=75',
-		title: 'Fractional SVG stars with CSS',
+		title: 'Curso1',
 		category: 'CSS',
 		description:
 			'Create a rating component with svg stars that support fractional values.',
@@ -35,7 +35,7 @@ const data = [
 		id: 4,
 		image:
 			'https://samuelkraft.com/_next/image?url=%2Fblog%2Fresponsive-animation-framer-motion%2Fimage.png&w=1080&q=75',
-		title: 'Responsive Animations with Framer Motion',
+		title: 'Curso5',
 		category: 'Javascript',
 		description:
 			'How to write responsive variants with media queries in javascript',
@@ -46,7 +46,7 @@ const data = [
 		id: 5,
 		image:
 			'https://samuelkraft.com/_next/image?url=%2Fblog%2Fbuilding-a-notion-blog-with-public-api%2Fimage.png&w=1080&q=75',
-		title: 'Building a blog with Notions public API',
+		title: 'Curso 7',
 		category: 'Next.js',
 		description:
 			'How to use Notion as a CMS using their public API and Next.js',
