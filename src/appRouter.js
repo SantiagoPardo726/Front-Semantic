@@ -5,7 +5,7 @@ import Course from "./pages/Course";
 import Home from "./pages/Home";
 import PrincipalFilter from './components/PrincipalFilter';
 import CourseForm from './components/Form-Course';
-import CourseForm from './pages/CourseForm';
+
 
 export const appRouter = createBrowserRouter(
     createRoutesFromElements(
