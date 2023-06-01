@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Field, FieldArray, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
 
-const Form2 = () => {
+const CourseForm = () => {
   function makePostRequest(data) {
     fetch("https://api.example.com/posts", { 
       method: "POST",
@@ -144,4 +144,4 @@ const Form2 = () => {
   );
 };
 
-export default Form2;
+export default CourseForm;
