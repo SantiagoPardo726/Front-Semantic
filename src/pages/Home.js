@@ -7,6 +7,7 @@ import Title from '../components/Title';
 import Footer from '../components/Footer';
 import PopularCategories from '../components/PopularCategories';
 import { useState } from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 const Home = () => {
     const [currentData, setCurrentData] = useState({"courses":[]});
