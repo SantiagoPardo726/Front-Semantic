@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/header.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 
 const Header = () => {
+    const context = useContext(AuthContext);
+    const username = context.user;
     return (
         <nav className="navbar">
             <div className="navbar-logo">
@@ -30,7 +33,7 @@ const Header = () => {
             </ul>
            
             <div className="navbar-user">
-                <span className="material-icons">person</span>
+                <span className="material-icons">{username}</span>
                 <span className="navbar-divider" />
                 <a href="/login" className="navbar-link material-icons">Login</a>
             </div>
