@@ -36,19 +36,17 @@
     text-decoration: underline;
 }
 .footer .column h3 {
-    /* Estilos para los títulos h3 */
-    color: #A3bac3;
+    color: #A3bac3; 
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .footer .column p {
-    /* Estilos para los párrafos p */
     color: #eaebed;
     font-size: 14px;
-    margin: 0;
-}
+    margin: 0; 
+ }  
 
 
   

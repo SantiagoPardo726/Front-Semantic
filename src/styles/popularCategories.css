@@ -1,0 +1,18 @@
+.seccionCategory {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 180vh; /* Utilizamos flexbox para distribuir los elementos en una fila */
+}
+
+.columnCategory {
+    flex: 1; /* Hacemos que las columnas ocupen el mismo espacio dentro del contenedor */
+    width: 50%;
+    padding-left:10px;
+    padding-bottom: 10px;
+}
