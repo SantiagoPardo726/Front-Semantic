@@ -1,10 +1,10 @@
-* {
+.filter-page{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-body {
+.body-df {
 	background-color: #161515;
 	color: #fff;
 	max-width: 1200px;

@@ -4,6 +4,7 @@ import {CourseFilter} from './CourseFilter'
 import React from 'react';
 import '../styles/footer.css';
 import data from '../data/data';
+import Title from './Title';
 
 const PrincipalFilter = () => {
 
@@ -31,21 +32,10 @@ const PrincipalFilter = () => {
 
         
         <>
-        <div className='title'>
-				<h1>
-					Recomendador de <span>Cursos</span> Basados en los Vistos
-				</h1>
-				<img
-					src='https://blogfilterbasics.netlify.app/static/media/img-portada.8261f3883a73550017d1.png'
-					alt='imagen-header'
-				/>
-			</div>
+    <Title title = {'Cursos Recomendados por KeyTerm'} subtitle = {'Estos son los  cursos Recomendados de Acuerdo a los que has tomado'}/>
         
         
         
-        <KeytermsFilter categories={categories } filterCategory={filterCategory} > 
-
-        </KeytermsFilter>
         <CourseFilter articles={articles} >
          </CourseFilter>
          

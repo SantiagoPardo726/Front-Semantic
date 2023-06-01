@@ -2,12 +2,12 @@ import './App.css';
 import { AuthProvider } from './components/AuthContext';
 import Course from './pages/Course';
 import Home from './pages/Home';
-import Form from './components/form';
-import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
-import Form2 from './components/form';
+import Form from './components/Form';
+import Form2 from './components/Form';
 import PrincipalFilter from './components/PrincipalFilter';
 import Login from './pages/Login';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 
 const responsive = {
