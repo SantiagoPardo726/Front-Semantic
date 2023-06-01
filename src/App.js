@@ -1,5 +1,8 @@
 import './App.css';
 import Home from './pages/Home';
+import CreateCourse from './components/CreateCourse'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import {Row, Col, Form, Input, Label, FormGroup, Button, FormFeedback} from 'reactstrap';
 
 const responsive = {
   superLargeDesktop: {
@@ -25,7 +28,11 @@ const responsive = {
 function App() {
   return (
     <>
-      <Home></Home>
+
+     <CreateCourse>
+     </CreateCourse>
+
+    
     </>
   );
 }

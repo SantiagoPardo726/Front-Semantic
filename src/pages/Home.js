@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import MovingCardList from '../components/MovingCardList';
 import Title from '../components/Title';
 import Footer from '../components/Footer';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 const Home = () => {
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -18,9 +19,16 @@ const Header = () => {
                     <a href="/servicios" className="navbar-link">Servicios</a>
                 </li>
                 <li className="navbar-item material-icons">
-                    <a href="/contacto" className="navbar-link">Contacto</a>
+
+              
+                <a href="/create-course" className="navbar-link">Crear Curso</a>
+               
                 </li>
+
+          
+
             </ul>
+           
             <div className="navbar-user">
                 <span className="material-icons">person</span>
                 <span className="navbar-divider" />
