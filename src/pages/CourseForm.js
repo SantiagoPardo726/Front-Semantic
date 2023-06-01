@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Field, FieldArray, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
+import Header from "../components/Header";
 
 const CourseForm = () => {
   function makePostRequest(data) {
@@ -76,6 +77,7 @@ const CourseForm = () => {
   };
 
   return (
+    <>
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -141,6 +143,7 @@ const CourseForm = () => {
         </Form>
       )}
     </Formik>
+    </>
   );
 };
 

@@ -20,7 +20,7 @@ const Header = () => {
                     <a href="/create-course" className="navbar-link">Crear Curso</a>
                 </li>
                 <li className="navbar-item material-icons">
-                    <a href="/servicios" className="navbar-link">Recomandaciones</a>
+                    <a href="/servicios" className="navbar-link">Recomendaciones</a>
                 </li>
                 <li className="navbar-item material-icons">
 
