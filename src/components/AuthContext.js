@@ -4,22 +4,29 @@ import React, { createContext, useState } from 'react';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem('user')),
+  )
 
-  const login = (username, password) => {
-    // Realiza aquí la lógica de autenticación (por ejemplo, una llamada a una API)
-    // y establece el usuario en el estado
-    setUser({ username });
-  };
 
-  const logout = () => {
-    // Realiza aquí la lógica de cierre de sesión y establece el usuario en null
-    setUser(null);
-  };
+  const updateUser = (userParam) => {
+    console.log("Antes");
+    console.log(user);
+    localStorage.setItem('user', JSON.stringify(user))
+    setUser(userParam);
+    console.log("lo que entra")
+    console.log(userParam)
+
+    console.log("Despues");
+    console.log(user);
+
+  }
+  
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, updateUser}}>
       {children}
     </AuthContext.Provider>
   );
 };
+
