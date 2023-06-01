@@ -13,7 +13,7 @@ const CategoryCourse = (props) => {
                     className="_1yvsftr"
                     alt=""
                 ></img>
-                {props["info"].name.charAt(0).toUpperCase() + props["info"].name.slice(1)}
+                {props["info"].name}
                 <svg
                     aria-hidden="true"
                     className="_yhukwjp"
@@ -33,7 +33,7 @@ const CategoryCourse = (props) => {
                             className="_pt9he7"
                             aria-activedescendant="course-title-0010"
                         >
-                            <span class="course-title">{course.name.charAt(0).toUpperCase() + course.name.slice(1)}</span>
+                            <span class="course-title">{course.name}</span>
                         </a>
                     </li>
                         );
@@ -41,6 +41,7 @@ const CategoryCourse = (props) => {
                 </ul>
                 <ul className="_rm7tne8">
                 {props["info"].courses.slice(5,9).map((course, index) => {
+                    console.log(course);
                         return (
                             <li className="_3hmsj">
                         <a

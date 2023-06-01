@@ -17,7 +17,7 @@ const Header = () => {
                     <a href="/home" className="navbar-link">Inicio</a>
                 </li>
                 <li className="navbar-item material-icons">
-                    <a href="/acerca" className="navbar-link">Crear Curso</a>
+                    <a href="/create-course" className="navbar-link">Crear Curso</a>
                 </li>
                 <li className="navbar-item material-icons">
                     <a href="/servicios" className="navbar-link">Recomandaciones</a>
