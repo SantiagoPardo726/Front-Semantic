@@ -1,9 +1,14 @@
 import './App.css';
+import { AuthProvider } from './components/AuthContext';
+import Course from './pages/Course';
 import Home from './pages/Home';
 import Form from './components/form';
 import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
 import Form2 from './components/form';
 import PrincipalFilter from './components/PrincipalFilter';
+import Login from './pages/Login';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 const responsive = {
   superLargeDesktop: {
@@ -26,17 +31,22 @@ const responsive = {
 };
 
 
+
+
 function App() {
-  return (
-    <>
-     <Router>
+  
+  (
+    <BrowserRouter>
       <Routes>
-      <Route path="/ddd" element={<PrincipalFilter />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/create-course" element={<Form2 />} />
+        <Route path="/" element={<Home />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<h1>No pagina</h1>} />
+        </Route>
       </Routes>
-    </Router>
-    </>
+    </BrowserRouter>
+
   );
 }
 

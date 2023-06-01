@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/title.css';
 
-const Title = () => {
+const Title = (props) => {
     return (
         <div class="seccion">
         <h1 class="titulo">
-            <span class="texto-grande">Cursos del momento</span>
+            <span class="texto-grande">{props.title}</span>
             <br />
-            <span class="texto-pequeno">Estos son los top 10 cursos más vistos </span>
+            <span class="texto-pequeno">{props.subtitle} </span>
         </h1>
     </div>
     );

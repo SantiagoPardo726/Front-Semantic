@@ -1,13 +1,5 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  body{
-    background: #eaebed;
-  }
-  
-  .slider {
+
+    .slider {
     margin:0 20px;
     overflow:"hidden";
     padding:2rem 0;
@@ -29,4 +21,4 @@
   }
   .react-multi-carousel-dot.react-multi-carousel-dot--active button{
   background: #A3BAC3 !important;
-  }
+  } 

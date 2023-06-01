@@ -1,0 +1,62 @@
+#midiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #A3bac3;
+}
+
+.columna1 {
+    flex: 1;
+    padding: 20px;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.columna2 {
+    flex: 1;
+    padding: 20px;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* background-color: #007090; */
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #01a7c2;
+    color: #eaebed;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #01a7c2;
+} 

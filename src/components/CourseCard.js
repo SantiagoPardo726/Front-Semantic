@@ -2,23 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 import axios from 'axios';
 
-export function CourseCard() {
+export function CourseCard(props) {
   const imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS82ET2bq9oTNwPOL8gqyoLoLfeqJJJWJmKQ&usqp=CAU";
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height:450}}>
       <CardMedia
         sx={{ height: 140 }}
-        image={imageUrl}
+        image={props.course["urlImage"]}
         title="Imagen del curso"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {props.course["name"]}
+        </Typography>
+        <Typography variant="h5" color="text.secondary">
+        {props.course["language"]=="pt"?"Potugueis":props.course["language"]}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        {props.course["description"].substring(0, 200)}
         </Typography>
       </CardContent>
       <CardActions>

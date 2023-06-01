@@ -1,0 +1,71 @@
+._1gjyeas {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    /* border-radius: 2%; */
+    width: 80vh;
+    border-bottom: 1px solid black; /* Agrega un borde inferior */
+            margin-bottom: 10px;
+}
+
+._1gbamhn {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    color: black;
+}
+
+._1gbamhn:hover {
+    background-color: #e0e0e0;
+}
+
+._1yvsftr {
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+._yhukwjp {
+    fill: #888;
+    margin-left: auto;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+._u3ctvv,
+._rm7tne8 {
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+}
+
+._3hmsj {
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+._pt9he7 {
+    color: #555;
+    text-decoration: none;
+}
+
+._pt9he7:hover {
+    text-decoration: underline;
+}
+
+.course-title {
+    /* font-weight: bold; */
+    font-family: Arial, sans-serif;
+    color: black;
+    font-size: 16;
+}

@@ -96,7 +96,7 @@ const sliderImageUrl = [
       },
   ];
 
-const MovingCardList = () => {
+  const MovingCardList = (props) => {
   return (
     <div className="parent">
       <Carousel
@@ -109,14 +109,14 @@ const MovingCardList = () => {
         partialVisible={false}
         autoPlaySpeed = {2000}
       >
-        {/* {sliderImageUrl.map((imageUrl, index) => {
+        {props.courses["courses"].map((course, index) => {
           return (
-            <div className="slider" key={index}>
-              <img src={imageUrl.url} alt="movie" />
+            <div className="slider" key={1}>
+            <CourseCard course = {course}/>
             </div>
           );
-        })} */}
-        <div className="slider" key={1}>
+        })}
+        {/* <div className="slider" key={1}>
               <CourseCard />
         </div>
         <div className="slider" key={2}>
@@ -139,7 +139,7 @@ const MovingCardList = () => {
         </div>
         <div className="slider" key={8}>
               <CourseCard />
-        </div>
+        </div> */}
       </Carousel>
     </div>
   );
