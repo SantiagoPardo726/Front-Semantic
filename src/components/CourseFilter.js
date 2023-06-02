@@ -1,20 +1,20 @@
 import '../styles/filter.css';
 
 
-export const CourseFilter = ({ articles }) => {
+export const CourseFilter = (props) => {
 	return (
         <div className="article-list">
-            {articles.map(article => (
+            {props.articles["courses"].map(article => (
                 <div className="article-container" key={article.id}>
                     <div className="img-container">
-                        <img src={article.image} alt={article.title} />
+                        <img src={article.urlImage} alt={article.name} />
                     </div>
                     <div className="article-body">
-                        <h2>{article.title}</h2>
+                        <h2>{article.name}</h2>
                         <p>{article.description}</p>
                         <div className="article-footer">
-                            <span>{article.date} · </span>
-                            <span>{article.ReadingTime}</span>
+                            <span>{article.language} · </span>
+                            <span>{article.language}</span>
                         </div>
                     </div>
                 </div>

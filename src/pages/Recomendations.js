@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import MovingCardList from '../components/MovingCardList';
 import { AuthContext } from '../components/AuthContext';
 import Title from '../components/Title';
+import PrincipalFilter from '../components/PrincipalFilter';
 
 
 const Recomendations = (props) => {
@@ -28,6 +29,9 @@ const Recomendations = (props) => {
           <Header></Header>  
           <Title title = {'Cursos en tus lenguages favoritos'} subtitle = {'Estos son que están el los lenguajes en los cuales has visto algún curso'}/>
           <MovingCardList courses = {currentData}></MovingCardList>
+          <PrincipalFilter/>
+          <Title title = {'Cursos de tu parecidos'} subtitle = {'Estos son los cursos que otros usuarios como tu han visto'}/>
+          
         </>
     );
 }

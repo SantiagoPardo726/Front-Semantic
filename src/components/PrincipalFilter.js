@@ -1,31 +1,32 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {KeytermsFilter} from './KeytermsFilter'
 import {CourseFilter} from './CourseFilter'
 import React from 'react';
 import '../styles/footer.css';
 import data from '../data/data';
 import Title from './Title';
+import { AuthContext } from './AuthContext';
 
 const PrincipalFilter = () => {
 
-    const allCategories = [
-		'All',
-		...new Set(data.map(article => article.category)),
-	];
-
-	const [categories, setCategories] = useState(allCategories);
+	const [courses, setCourses] = useState({"courses":[]});
 	const [articles, setArticles] = useState(data);
+    const context = useContext(AuthContext);
 
-    const filterCategory = (category) => {
-            if (category== 'All'){
-                setArticles(data)
-                return
-            }
+    const username = context.user;
+    const fetchData = (url) => {
+        fetch(url)
+          .then((response) => response.json())
+          .then((json) => {
+            setCourses(json);
+          })
+          .catch((error) => console.error(error));
+      };
+    useEffect(() => {
+        fetchData("http://127.0.0.1:8000/courses_by_related_term/"+username);
+      }, []);
 
-            const filteredData = data.filter(article => article.category === category);
-		setArticles(filteredData)
 
-    }
 
     return (
 
@@ -36,7 +37,7 @@ const PrincipalFilter = () => {
         
         
         
-        <CourseFilter articles={articles} >
+        <CourseFilter articles={courses} >
          </CourseFilter>
          
          
