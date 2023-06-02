@@ -35,18 +35,24 @@ const MyGraph = () => {
 
 
     const generateNewGraph = (nodes) => {
+
+        const getRandomColor = () => {
+            const colors = ["red", "green", "blue", "yellow", "purple"];
+            return colors[Math.floor(Math.random() * colors.length)];
+          };
+
         return nodes.map((node, index) => ({
           id: `N${index + 1}`,
           color: getRandomColor(),
-          label: node.label,
+          label: node,
         }));
       };
   
-      const nodes = ["Early"]; // Replace with your own nodes array
+      const nodes = ["Early","math", "ddd","sss" ]; 
       const newNodes = generateNewGraph(nodes);
   
       const newLinks = newNodes.map(node => ({
-        source: "A1",
+        source: 'N1',
         target: node.id,
       }));
   
@@ -54,7 +60,8 @@ const MyGraph = () => {
         nodes: newNodes,
         links: newLinks,
       });
-    };
+    
+   
 
     setShowHiddenText(true);
   };
