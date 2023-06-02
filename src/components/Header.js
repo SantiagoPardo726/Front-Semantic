@@ -35,7 +35,7 @@ const Header = () => {
           </a>
         </li>
         <li className="navbar-item material-icons">
-          <a href="/create-course" className="navbar-link">
+          <a href="/graph" className="navbar-link">
             Grafo
           </a>
         </li>
