@@ -34,20 +34,27 @@ const MyGraph = () => {
   const handleButtonClick = () => {
 
 
-
-    const updatedNodes = [
-        ...data2.nodes,
-        { id: 'E1', color: 'blue', label: 'Nodo D' },
-      ];
-      const updatedLinks = [
-        ...data2.links,
-        { source: 'A1', target: 'E1' },
-      ];
-    
+    const generateNewGraph = (nodes) => {
+        return nodes.map((node, index) => ({
+          id: `N${index + 1}`,
+          color: getRandomColor(),
+          label: node.label,
+        }));
+      };
+  
+      const nodes = ["Early"]; // Replace with your own nodes array
+      const newNodes = generateNewGraph(nodes);
+  
+      const newLinks = newNodes.map(node => ({
+        source: "A1",
+        target: node.id,
+      }));
+  
       setData2({
-        nodes: updatedNodes,
-        links: updatedLinks,
+        nodes: newNodes,
+        links: newLinks,
       });
+    };
 
     setShowHiddenText(true);
   };
