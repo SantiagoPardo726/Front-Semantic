@@ -1,12 +1,10 @@
 // AuthContext.js
-import React, { createContext, useState } from 'react';
-
-export const AuthContext = createContext();
+import React, { createContext, useState } from "react";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const login = (username, password) => {
+  const login = (username) => {
     // Realiza aquí la lógica de autenticación (por ejemplo, una llamada a una API)
     // y establece el usuario en el estado
     setUser({ username });
@@ -14,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     // Realiza aquí la lógica de cierre de sesión y establece el usuario en null
-    setUser(null);
+    setUser("null");
   };
 
   return (
@@ -23,3 +21,4 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+export const AuthContext = createContext();
