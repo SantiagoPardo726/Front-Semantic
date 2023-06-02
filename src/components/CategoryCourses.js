@@ -29,7 +29,7 @@ const CategoryCourse = (props) => {
                         return (
                             <li className="_3hmsj">
                         <a
-                            href="/math/cc-fifth-grade-math"
+                            href={'/course/'+course.name}
                             className="_pt9he7"
                             aria-activedescendant="course-title-0010"
                         >
