@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import {KeytermsFilter} from './KeytermsFilter'
 import {CourseFilter} from './CourseFilter'
 import React from 'react';
-import '../styles/footer.css';
+import '../styles/recomendation.css'
 import data from '../data/data';
 import Title from './Title';
 import { AuthContext } from './AuthContext';
@@ -34,13 +34,13 @@ const PrincipalFilter = () => {
         
         <>
     <Title title = {'Cursos Recomendados por KeyTerm'} subtitle = {'Estos son los  cursos Recomendados de Acuerdo a los que has tomado'}/>
+    
         
-        
-        
+    <div class="_midiv2">
         <CourseFilter articles={courses} >
          </CourseFilter>
          
-         
+         </div>
          </>
        )
 }

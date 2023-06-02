@@ -122,8 +122,7 @@ export default function CourseDetail() {
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
-        setCourse(json);
+        setCourse(json.course);
       })
       .catch((error) => console.error(error));
   };
@@ -140,7 +139,7 @@ export default function CourseDetail() {
       .replace(/^(.)/, (match, char) => char.toUpperCase());
   }
   useEffect(() => {
-    fetchData("http://127.0.0.1:8000/detailcouse/");
+    fetchData("http://127.0.0.1:8000/detail_course/"+courseId);
   }, []);
   return (
     <>
@@ -148,7 +147,7 @@ export default function CourseDetail() {
       <div className="dashboard">
         <div className="flex-row">
           <div className="flex-col">
-            <div className="header-CD">Courso: {course.basic.name}</div>
+            <div className="header-CD">Curso: {course.basic.name}</div>
             <div className="flex-row">
               <div className="sub-heder-CD">Categoria: </div>
               <div> {course.category.name}</div>

@@ -43,6 +43,7 @@ img {
 
 .article-container {
 	padding: 0 10px;
+	width: 90vh;
 }
 
 .article-container h2 {
@@ -54,11 +55,13 @@ img {
 
 .img-container {
 	overflow: hidden;
+	width: 90vh;
 }
 
 .img-container img {
 	border-radius: 15px;
 	cursor: pointer;
+	height: 20%;
 }
 
 .img-container img:hover {

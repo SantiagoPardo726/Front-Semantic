@@ -13,7 +13,7 @@ const NuevaPagina=() => {
   return(
        
 
-  )
+  );
 
 }
 export default NuevaPagina;
