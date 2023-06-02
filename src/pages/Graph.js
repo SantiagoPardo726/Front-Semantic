@@ -18,7 +18,7 @@ const MyGraph = () => {
         ],
       });
 
-
+  const [nodes, setNodes] = useState([]);
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
   const [showHiddenText, setShowHiddenText] = useState(false);
@@ -47,22 +47,26 @@ const MyGraph = () => {
           label: node,
         }));
       };
-  
-      const nodes = ["Early","math", "ddd","sss" ]; 
+      const fetchData = (url) => {
+        fetch(url)
+          .then((response) => response.json())
+          .then((json) => {
+            setNodes(json["courses"]);
+          })
+          .catch((error) => console.error(error));
+      }; 
+      fetchData("http://127.0.0.1:8000/related-courses/"+text1);
       const newNodes = generateNewGraph(nodes);
   
       const newLinks = newNodes.map(node => ({
         source: 'N1',
         target: node.id,
       }));
-  
+      console.log(text1);
       setData2({
         nodes: newNodes,
         links: newLinks,
       });
-    
-   
-
     setShowHiddenText(true);
   };
 
