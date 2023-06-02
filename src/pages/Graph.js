@@ -41,11 +41,16 @@ const MyGraph = () => {
             return colors[Math.floor(Math.random() * colors.length)];
           };
 
+        nodes.unshift(text1)
+
         return nodes.map((node, index) => ({
           id: `N${index + 1}`,
           color: getRandomColor(),
           label: node,
         }));
+        
+        
+
       };
       const fetchData = (url) => {
         fetch(url)
