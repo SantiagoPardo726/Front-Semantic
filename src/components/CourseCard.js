@@ -24,8 +24,7 @@ export function CourseCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button href={'/course/'+props.course["name"]} size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button href={'/course/'+props.course["name"]} size="small">Detalle</Button>
       </CardActions>
     </Card>
   );

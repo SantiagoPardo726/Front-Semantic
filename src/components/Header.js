@@ -9,16 +9,18 @@ const Header = () => {
   const username = context.user;
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
+      <a href="/">
+      <div className="navbar-logo" >
         <img
           src="https://w7.pngwing.com/pngs/475/488/png-transparent-logo-mobile-application-testing-mobile-cloud-computing-mobile-phones-software-testing-portal-logo-text-logo-logo-vector.png"
           alt="Logo"
           className="logo-image"
         />
       </div>
+      </a>
       <ul className="navbar-menu">
         <li className="navbar-item material-icons">
-          <a href="/home" className="navbar-link">
+          <a href="/" className="navbar-link">
             Inicio
           </a>
         </li>
@@ -28,13 +30,13 @@ const Header = () => {
           </a>
         </li>
         <li className="navbar-item material-icons">
-          <a href="/servicios" className="navbar-link">
+          <a href="/recomendations" className="navbar-link">
             Recomendaciones
           </a>
         </li>
         <li className="navbar-item material-icons">
           <a href="/create-course" className="navbar-link">
-            Crear Curso
+            Grafo
           </a>
         </li>
       </ul>

@@ -13,6 +13,7 @@
   
   .logo-image {
     height: 70px; /* Ajusta la altura según tus necesidades */
+    cursor: pointer;
   }
   
   .navbar-menu {

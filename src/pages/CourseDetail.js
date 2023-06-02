@@ -2,7 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom/dist";
 import Header from "../components/Header";
 import ChipList from "../components/ChipList";
-import { Modal, Backdrop, Fade, Box, Typography } from "@mui/material";
+import {
+  Modal,
+  Backdrop,
+  Fade,
+  Box,
+  Typography,
+  CircularProgress,
+} from "@mui/material";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 
@@ -118,14 +125,31 @@ export default function CourseDetail() {
     boxShadow: 24,
     p: 4,
   };
+  const [isDataStale, setIsDataStale] = useState(false);
+
   const fetchData = (url) => {
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
+        console.log(json);
+
         setCourse(json.course);
+        setIsDataStale(true);
       })
       .catch((error) => console.error(error));
   };
+  useEffect(() => {
+    let timeoutId;
+    if (isDataStale) {
+      timeoutId = setTimeout(() => {
+        setIsDataStale(true);
+      }, 5000);
+    } else {
+      setIsDataStale(false);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [isDataStale]);
   const [open, setOpen] = useState(false);
   const [course, setCourse] = useState(courseQuemado);
 
@@ -144,57 +168,63 @@ export default function CourseDetail() {
   return (
     <>
       <Header />
-      <div className="dashboard">
-        <div className="flex-row">
-          <div className="flex-col">
-            <div className="header-CD">Curso: {course.basic.name}</div>
+      <>
+        {!isDataStale ? (
+          <CircularProgress />
+        ) : (
+          <div className="dashboard">
             <div className="flex-row">
-              <div className="sub-heder-CD">Categoria: </div>
-              <div> {course.category.name}</div>
-            </div>
-            <div className="image-container">
-              <img className="image-CD" src={course.image} alt="Course " />
-            </div>
-
-            <div className="flex-col">
-              <div className="flex-row">
-                <div className="flex-col-3of4">
-                  <div style={{ marginTop: "25px" }}>
-                    <div className="info-dashboard">
-                      <div className="sub-header-basic">Descripción</div>
-                      <div className="description-body">
-                        {course.basic.description}
-                      </div>
-                      <div className="divider"></div>
-                      <div className="sub-header-basic">Terminos:</div>
-
-                      <ChipList list={course.keyTerms} />
-                    </div>
-                  </div>
+              <div className="flex-col">
+                <div className="header-CD">Courso: {course.basic.name}</div>
+                <div className="flex-row">
+                  <div className="sub-heder-CD">Categoria: </div>
+                  <div> {course.category.name}</div>
                 </div>
-                <div className="flex-col-1of4">
-                  <div className="flex-col-80">
-                    <div className="sub-header-basic">Lecciones</div>
-                    <div className="summary">
-                      {course.lessons.map((lesson) => (
-                        <div
-                          className="term"
-                          onClick={() => {
-                            handleOpen();
-                            setBody(lesson.content);
-                          }}
-                        >
-                          {toCamelCase(lesson.name)}
+                <div className="image-container">
+                  <img className="image-CD" src={course.image} alt="Course " />
+                </div>
+
+                <div className="flex-col">
+                  <div className="flex-row">
+                    <div className="flex-col-3of4">
+                      <div style={{ marginTop: "25px" }}>
+                        <div className="info-dashboard">
+                          <div className="sub-header-basic">Descripción</div>
+                          <div className="description-body">
+                            {course.basic.description}
+                          </div>
+                          <div className="divider"></div>
+                          <div className="sub-header-basic">Terminos:</div>
+
+                          <ChipList list={course.keyTerms} />
                         </div>
-                      ))}
+                      </div>
+                    </div>
+                    <div className="flex-col-1of4">
+                      <div className="flex-col-80">
+                        <div className="sub-header-basic">Lecciones</div>
+                        <div className="summary">
+                          {course.lessons.map((lesson) => (
+                            <div
+                              className="term"
+                              onClick={() => {
+                                handleOpen();
+                                setBody(lesson.content !== null?lesson.content :"Contenido Vacio");
+                              }}
+                            >
+                              {toCamelCase(lesson.name)}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </>
       <Footer />
       <Modal
         aria-labelledby="transition-modal-title"
