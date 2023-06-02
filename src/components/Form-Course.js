@@ -10,38 +10,29 @@ const CourseForm = () => {
     courseName: "",
     category: "",
     courseLink: "",
-    modules: [{ moduleTitle: "", moduleDescription: "" }],
+    modules: [{ name: "", content: "" }],
+    courseDescription: "",
   };
   function makePostRequest(data) {
-    fetch("https://api.example.com/posts", {
-      method: "POST",
-      headers: {
-        "Content-uri": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Request successful
-          console.log("Post created successfully");
-        } else {
-          // Request failed
-          console.error("Error creating post");
-        }
+    axios.post('http://127.0.0.1:8000/create_course', data)
+      .then(response => {
+        console.log('Post created successfully');
       })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
+  
 
   const validationSchema = Yup.object().shape({
     courseName: Yup.string().required("El nombre del curso es requerido"),
     category: Yup.string().required("La categoria es requerida"),
     courseLink: Yup.string().required("El enlace del curso es requerido"),
+    courseDescription: Yup.string().required("El nombre del curso es requerido"),
     modules: Yup.array().of(
       Yup.object().shape({
-        moduleTitle: Yup.string().required("El título del módulo es requerido"),
-        moduleDescription: Yup.string().required(
+        name: Yup.string().required("El título del módulo es requerido"),
+        content: Yup.string().required(
           "La descripción del módulo es requerida"
         ),
       })
@@ -55,31 +46,19 @@ const CourseForm = () => {
     makePostRequest({
       course: {
         basic: {
-          name: values.courseLink,
-          uri: values.courseLink,
+          name: values.courseName,
+          link: values.courseLink,
+          description:values.courseDescription
+          ,
           language: values.language,
         },
         category: { uri: values.category },
         lessons: values.modules,
-        keyTerms: [{}],
         image:
           "https://www.disfrutabox.com/upload/images/brands/chimbo-grande.jpg",
       },
     });
-    console.log({
-      course: {
-        basic: {
-          name: values.courseLink,
-          uri: values.courseLink,
-          language: values.language,
-        },
-        category: { uri: values.category },
-        lessons: values.modules,
-        keyTerms: [{}],
-        image:
-          "https://www.disfrutabox.com/upload/images/brands/chimbo-grande.jpg",
-      },
-    });
+
   };
 
   const [options, setOptions] = useState([
@@ -95,7 +74,7 @@ const CourseForm = () => {
   useEffect(() => {
     // Fetch options from JSON endpoint
     axios
-      .get("/api/options")
+      .get("http://127.0.0.1:8000/categories")
       .then((response) => {
         setOptions(response.data.categories);
       })
@@ -124,6 +103,19 @@ const CourseForm = () => {
               />
               <ErrorMessage
                 name="courseName"
+                component="div"
+                className="error"
+              />
+            </div>
+            <div>
+              <label>Descripción del Curso:</label>
+              <Field
+                name="courseDescription"
+                placeholder="Ej: Soy una descripción."
+                className="custom-field"
+              />
+              <ErrorMessage
+                name="courseDescription"
                 component="div"
                 className="error"
               />
@@ -177,27 +169,27 @@ const CourseForm = () => {
                       <div>
                         <label>Nombre de la leccion:</label>
                         <Field
-                          name={`modules.${index}.moduleTitle`}
+                          name={`modules.${index}.name`}
                           className="custom-field"
                           placeholder={"Ej: RDF: " + index}
                         />
                         <ErrorMessage
-                          name={`modules.${index}.moduleTitle`}
+                          name={`modules.${index}.name`}
                           component="div"
                           className="error"
                         />
                       </div>
                       <div>
-                        <label>link de la leccion:</label>
+                        <label>Contenido de la Lección</label>
                         <Field
-                          name={`modules.${index}.moduleDescription`}
+                          name={`modules.${index}.content`}
                           className="custom-field"
                           placeholder={
-                            "Ej: http://localhost:3000/course/lesson/" + index
+                            "Ej: Soy un contenido" + index
                           }
                         />
                         <ErrorMessage
-                          name={`modules.${index}.moduleDescription`}
+                          name={`modules.${index}.content`}
                           component="div"
                           className="error"
                         />
@@ -206,7 +198,7 @@ const CourseForm = () => {
                         <button
                           type="add-lesson"
                           onClick={() => {
-                            push({ moduleTitle: "", moduleDescription: "" });
+                            push({ name: "", content: "" });
                             setMoreOnelesson(moreOnelesson + 1);
                           }}
                         >
