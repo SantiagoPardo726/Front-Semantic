@@ -12,7 +12,7 @@ const Header = () => {
       <a href="/">
       <div className="navbar-logo" >
         <img
-          src="https://w7.pngwing.com/pngs/475/488/png-transparent-logo-mobile-application-testing-mobile-cloud-computing-mobile-phones-software-testing-portal-logo-text-logo-logo-vector.png"
+          src="https://firebasestorage.googleapis.com/v0/b/moviles2023-c0911.appspot.com/o/images%2FlogoSW.png?alt=media&token=28386e87-abd8-4fca-bccb-f41a2e732dc6&_gl=1*4f0mc3*_ga*NTI4Mjc5OTcyLjE2Nzk3MDEzMjM.*_ga_CW55HF8NVT*MTY4NTY5MDE3OC4xNS4xLjE2ODU2OTAyNDcuMC4wLjA."
           alt="Logo"
           className="logo-image"
         />
@@ -35,7 +35,7 @@ const Header = () => {
           </a>
         </li>
         <li className="navbar-item material-icons">
-          <a href="/create-course" className="navbar-link">
+          <a href="/graph" className="navbar-link">
             Grafo
           </a>
         </li>
