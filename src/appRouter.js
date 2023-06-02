@@ -8,9 +8,9 @@ import Login from "./pages/Login";
 import Course from "./pages/Course";
 import Home from "./pages/Home";
 import PrincipalFilter from "./components/PrincipalFilter";
-import CourseForm from "./components/Form-Course";
 import Recomendations from "./pages/Recomendations";
 import CourseDetail from "./pages/CourseDetail";
+import CreateCourse from "./pages/CreateCourse";
 
 export const appRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +19,7 @@ export const appRouter = createBrowserRouter(
       <Route path="/course" element={<Course />} />
       <Route path="/login" element={<Login />} />
       <Route path="/filter" element={<PrincipalFilter />} />
-      <Route path="/create-course" element={<CourseForm />} />
+      <Route path="/create-course" element={<CreateCourse></CreateCourse>} />
       <Route path="/course/:courseId" element={<CourseDetail />} />
 
       <Route path="/recomendations" element={<Recomendations />} />

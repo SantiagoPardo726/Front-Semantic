@@ -1,0 +1,184 @@
+.dashboard-form{
+    display: flex;
+    width: 80%;
+    margin:auto;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  .btn-container{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+
+  }
+  
+  .contenedor {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+  }
+  .header-form{
+    font-size: x-large;
+    font-weight: 600;
+  }
+  
+  .formulario {
+      width: 100%;
+      margin-top: 50px;
+      background: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+  }
+  
+  .formulario > div {
+      margin-bottom: 20px;
+      width: 90%;
+      margin: auto;
+  }
+  
+  .formulario label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      color: #1f1f1f;
+  }
+  
+  .formulario input,
+  .formulario textarea {
+      font-family: 'Open Sans', sans-serif;
+      width: 98%;
+      border-radius: 5px;
+      border: 2px solid #e2e2e2;
+      font-size: 18px;
+      padding: 10px;
+      margin: auto;
+      margin-bottom: 5px;
+      color: #1f1f1f;
+  }
+  
+  .formulario input:focus {
+      outline: none;
+      border: 2px solid #0085FF;
+  }
+  
+  .formulario .error {
+      color: #e92b2d;
+      font-weight: 600;
+      font-size: 12px;
+  }
+  .custom-field {
+    font-size: 16px; 
+    background-color: #f8f8f8; /* Set the desired background color */
+
+    /* Add any other custom styles */
+  }  
+  .formulario button[type="submit"] {
+      display: block;
+      background: #01a7c2;
+      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+      padding: 10px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      transition: .3s ease all;
+      margin: auto;
+  }
+  
+  .formulario button[type="submit"]:hover {
+      background: #0085FF;
+  }
+  
+  
+  .formulario button[type="add-lesson"] {
+    padding: 1.2em 1em;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+.formulario button[type="add-lesson"]:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+
+    transform: translateY(-5px);
+  }
+
+  select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #e2e2e2;
+    font-size: 18px;}
+.formulario button[type="add-lesson"]:active {
+    transform: translateY(-2px);
+
+  }
+
+  
+  
+  .formulario button[type="del-lesson"] {
+    background-color: #ff7f81;
+    padding: 1.2em 1em;
+    font-weight: 500;
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .formulario button[type="del-lesson"]:hover {
+          background-color: #e92b2d;
+    box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
+    color: #fff;
+
+    transform: translateY(-5px);
+  }
+  
+  
+  
+  
+  .formulario .exito {
+      text-align: center;
+      font-size: 14px;
+      padding-top: 20px;
+      color: #02a802;
+  }
+  
+  .formulario input[type="radio"] {
+      width: auto;
+  }
+  
+  
+  .width-space{
+    display: flex;
+    width: 20px;
+  }
