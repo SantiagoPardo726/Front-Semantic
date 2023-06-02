@@ -11,6 +11,7 @@ import PrincipalFilter from "./components/PrincipalFilter";
 import CourseForm from "./components/Form-Course";
 import Recomendations from "./pages/Recomendations";
 import CourseDetail from "./pages/CourseDetail";
+import MyGraph from './pages/Graph';
 
 export const appRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -21,9 +22,10 @@ export const appRouter = createBrowserRouter(
       <Route path="/filter" element={<PrincipalFilter />} />
       <Route path="/create-course" element={<CourseForm />} />
       <Route path="/course/:courseId" element={<CourseDetail />} />
-
+      <Route path="/graph" element={<MyGraph/>} />
       <Route path="/recomendations" element={<Recomendations />} />
       <Route path="*" element={<h1>No pagina</h1>} />
     </Route>
   )
 );
+
